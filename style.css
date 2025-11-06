@@ -1,0 +1,208 @@
+/* 1. Use a more-intuitive box-sizing model */
+/* use rem for font-size and px for everything else. */
+
+:root.dark {
+  --color-base-bg: rgb(8, 8, 8);
+  --color-base-form: rgb(24, 24, 24);
+  --color-base-text: rgb(240, 240, 240);
+}
+
+:root {
+  --color-base-bg: rgb(240, 239, 239);
+  --color-base-form: white;
+  --color-base-text: black;
+}
+
+body, theme
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+* {
+  margin: 0;
+}
+
+html {
+    font-size: 16px;
+}
+body {
+  /* 4. Add accessible line-height */
+  line-height: 1.5;
+  font-family: system-ui;
+  font-size: clamp(1rem, 0.8rem + 0.5vw, 1.125rem); 
+
+  display: flex;
+  height: 100vh;
+  color: var(--color-base-text)
+}
+
+/*  */
+div#picture{
+    flex: 2 1 0;
+    position: relative;
+}
+
+div#sign-up {
+    flex: 3 1 0;
+}
+
+div#picture video {
+    height: 100%;
+    width: 100%;
+    object-fit: cover; /* video covers container */
+}
+
+#odin {
+  position: absolute;
+  z-index: 10;
+  width: 100%;
+
+  background-color: rgba(0,0,0,0.4);
+  color: white;
+  top: 20%;
+
+  display: flex;
+  gap: 10px;
+  font-size: 4rem;
+  align-items: center;
+  justify-content: center;
+}
+#odin img {
+  width: 20%;
+  height: auto;
+}
+
+#sign-up {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    height: 100vh;
+}
+
+
+#sign-up > * {
+    flex: 1 1 0;
+}
+
+#top-row {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  padding: 0 20px 30px 50px;
+
+  font-weight: 500;
+  font-size: 1.5rem;
+  gap: 20px;
+  background-color: var(--color-base-bg);
+
+  position: relative;
+}
+
+div#moon button {
+  all: unset;
+}
+div#moon {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}
+#moon-pic {
+  width: 30px;
+  height: auto;
+}
+
+#middle-row {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 20px 20px 50px;
+  gap: 20px;
+
+  color: var(--color-base-text);
+  background-color: var(--color-base-form);
+}
+
+#lets-do-this {
+  font-weight: 500;
+  font-size: 1.3rem;
+}
+
+#form {
+  display: flex;
+  flex-wrap: wrap;
+  width: 550px;
+}
+
+label {
+  display: block;
+}
+
+#form > * {
+  flex: 0 0 50%; /* makes each input take up half of the width, making sure there's 2 input per row */
+}
+
+label {
+  font-weight: 300;
+  font-size: 0.9rem;
+}
+input {
+  border-color: #E5E7EB;
+}
+
+input.error {
+  border: 1px solid red;
+}
+
+input:focus {
+  border: 1px solid blue;
+}
+
+#email:invalid:not(:placeholder-shown) {
+  border: 1px solid red;
+}
+
+#last-row {
+  background-color: var(--color-base-bg);
+  padding: 30px 20px 20px 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 40px;
+}
+
+button#create {
+  border-radius: 10px;
+  padding: 10px 50px;
+  background-color: #0f8baa; /* sunset blue */
+  border: 0;
+  color: var(--color-base-text);
+}
+/* 6. Improve media defaults */
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 7. Inherit fonts for form controls */
+input, button, textarea, select {
+  font: inherit;
+}
+
+/* 8. Avoid text overflows */
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+/* 9. Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance;
+}
+
+.amarante-regular {
+  font-family: "Amarante", serif;
+  font-weight: 400;
+  font-style: normal;
+}

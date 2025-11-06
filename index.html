@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amarante&display=swap" rel="stylesheet">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="picture">
+        <!-- <video src="assets/video.mp4" autoplay muted loop></video> -->
+        <video src="assets/video.mp4" alt="sidebar" muted></video>
+        <div id="odin">
+            <img src="assets/odin.png" alt="odin">
+            <div class="amarante-regular">Riley Tan </div>
+        </div>
+    </div>
+    <div id="sign-up">
+
+        <div class="sign-up-row" id="top-row">
+            <div id="moon">
+                <button class="theme-toggle"><img src="assets/moon.png" alt="dark" id="moon-pic"></button>
+            </div>
+            <p>This is not a real online service! You know you need something <br> like 
+                this in your life to help you realize your deepest dreams.<br> Sign up now to get started.
+            </p>
+            <p>You <i>know</i> you want to.</p>
+        </div>
+        <div class="sign-up-row" id="middle-row">
+            <div id="lets-do-this">Let's do this!</div>
+            <form id="form" method="post">
+                <div>
+                    <label for="first-name">First Name</label>
+                    <input type="text" id="first-name" name="first-name" required>
+                </div>
+                <div>
+                    <label for="last-name">Last Name</label>
+                    <input type="text" id="last-name" name="last-name" required>
+                </div>
+                <div>
+                    <label for="email">Email</label>
+                    <input type="text" name="email" id="email" required placeholder="john.doe@gmail.com" 
+                    pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$">
+                </div>
+                <div>
+                    <label for="phone-number">Phone Number</label>
+                    <input type="tel" id="phone-number" name="phone-number">
+                </div>
+                <div>
+                    <label for="password">Password</label>
+                    <input type="password" name="password" id="password" required placeholder="minimum 3 digits">
+                </div>
+                <div>
+                    <label for="confirm">Confirm Password</label>
+                    <input type="password" name="password" id="confirm" required>
+                </div>
+                <div id="invalid"></div>
+            </form>
+
+        </div>
+        <div class="sign-up-row" id="last-row">
+            <button type="submit" id="create"><strong>Create Account</strong></button>
+            <p>Already have an account? Log in</p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
