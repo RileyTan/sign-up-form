@@ -17,9 +17,8 @@ requiredInputs.forEach(requiredInput => {
             }
         })
     } )
-
-
-submit.addEventListener("click", event => {
+    
+form.addEventListener("submit", event => {
     event.preventDefault()
     feedback.textContent = ""
     // passwords don't match, no submission
