@@ -15,15 +15,14 @@
 <body>
     <div id="picture">
         <!-- <video src="assets/video.mp4" autoplay muted loop></video> -->
-        <video src="assets/video.mp4" alt="sidebar" muted></video>
+        <video src="assets/video.mp4" alt="sidebar" muted autoplay muted></video>
         <div id="odin">
             <img src="assets/odin.png" alt="odin">
             <div class="amarante-regular">Riley Tan </div>
         </div>
     </div>
     <div id="sign-up">
-
-        <div class="sign-up-row" id="top-row">
+        <div id="top-row">
             <div id="moon">
                 <button class="theme-toggle"><img src="assets/moon.png" alt="dark" id="moon-pic"></button>
             </div>
@@ -32,41 +31,44 @@
             </p>
             <p>You <i>know</i> you want to.</p>
         </div>
-        <div class="sign-up-row" id="middle-row">
+        
+        
+        <div id="middle-row">
             <div id="lets-do-this">Let's do this!</div>
             <form id="form" method="post">
                 <div>
-                    <label for="first-name">First Name</label>
-                    <input type="text" id="first-name" name="first-name" required>
+                    <label for="first-name">First Name*</label>
+                    <input class="required" type="text" id="first-name" name="first-name" required>
                 </div>
                 <div>
-                    <label for="last-name">Last Name</label>
-                    <input type="text" id="last-name" name="last-name" required>
+                    <label for="last-name">Last Name*</label>
+                    <input class="required" type="text" id="last-name" name="last-name" required>
                 </div>
                 <div>
-                    <label for="email">Email</label>
-                    <input type="text" name="email" id="email" required placeholder="john.doe@gmail.com" 
-                    pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$">
+                    <label for="email">Email*</label>
+                    <input class="required" type="email" name="email" id="email" required placeholder="john.doe@gmail.com" >
                 </div>
                 <div>
                     <label for="phone-number">Phone Number</label>
-                    <input type="tel" id="phone-number" name="phone-number">
+                    <input type="tel" id="phone-number" name="phone-number" required>
                 </div>
                 <div>
-                    <label for="password">Password</label>
-                    <input type="password" name="password" id="password" required placeholder="minimum 3 digits">
+                    <label for="password">Password*</label>
+                    <input class="required" type="password" name="password" id="password" required placeholder="minimum 3 characters" minlength="3" >
                 </div>
                 <div>
-                    <label for="confirm">Confirm Password</label>
-                    <input type="password" name="password" id="confirm" required>
+                    <label for="confirm">Confirm Password*</label>
+                    <input class="required" type="password" name="confirm-password" id="confirm" required>
                 </div>
-                <div id="invalid"></div>
+                <div id="submission-feedback"></div>
             </form>
-
         </div>
-        <div class="sign-up-row" id="last-row">
-            <button type="submit" id="create"><strong>Create Account</strong></button>
+
+
+        <div id="last-row">
+            <button form="form" type="submit" id="create"><strong>Create Account</strong></button>
             <p>Already have an account? Log in</p>
+            <p id="thank-you"></p>
         </div>
     </div>
     <script src="script.js"></script>

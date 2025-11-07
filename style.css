@@ -1,6 +1,3 @@
-/* 1. Use a more-intuitive box-sizing model */
-/* use rem for font-size and px for everything else. */
-
 :root.dark {
   --color-base-bg: rgb(8, 8, 8);
   --color-base-form: rgb(24, 24, 24);
@@ -13,6 +10,19 @@
   --color-base-text: black;
 }
 
+
+.amarante-regular {
+  font-family: "Amarante", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* ================================================================================================ */
+/*                        CSS RESET                                                                 */
+/* ================================================================================================ */
+
+/* 1. Use a more-intuitive box-sizing model */
+/* use rem for font-size and px for everything else. */
 body, theme
 *, *::before, *::after {
   box-sizing: border-box;
@@ -26,6 +36,32 @@ body, theme
 html {
     font-size: 16px;
 }
+
+/* 6. Improve media defaults */
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 7. Inherit fonts for form controls */
+input, button, textarea, select {
+  font: inherit;
+}
+
+/* 8. Avoid text overflows */
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+/* 9. Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+/* ================================================================================================ */
+/*                        CSS RESET                                                                 */
+/* ================================================================================================ */
+
+
 body {
   /* 4. Add accessible line-height */
   line-height: 1.5;
@@ -37,7 +73,9 @@ body {
   color: var(--color-base-text)
 }
 
-/*  */
+/* ================================================================================================ */
+/*                        Sidebar + Sign up form (handling flex)                                                    */
+/* ================================================================================================ */
 div#picture{
     flex: 2 1 0;
     position: relative;
@@ -47,12 +85,16 @@ div#sign-up {
     flex: 3 1 0;
 }
 
+
 div#picture video {
     height: 100%;
     width: 100%;
     object-fit: cover; /* video covers container */
 }
 
+/* ================================================================================================ */
+/*                        Styling Sidebar                                                                */
+/* ================================================================================================ */
 #odin {
   position: absolute;
   z-index: 10;
@@ -72,6 +114,10 @@ div#picture video {
   width: 20%;
   height: auto;
 }
+
+/* ================================================================================================ */
+/*                        Styling Sign up form                                                                */
+/* ================================================================================================ */
 
 #sign-up {
     display: flex;
@@ -99,18 +145,9 @@ div#picture video {
   position: relative;
 }
 
-div#moon button {
-  all: unset;
-}
-div#moon {
-  position: absolute;
-  top: 5px;
-  right: 5px;
-}
-#moon-pic {
-  width: 30px;
-  height: auto;
-}
+/* ================================================================================================ */
+/*                        Styling middle row (form)                                                           */
+/* ================================================================================================ */
 
 #middle-row {
   display: flex;
@@ -127,6 +164,7 @@ div#moon {
   font-size: 1.3rem;
 }
 
+
 #form {
   display: flex;
   flex-wrap: wrap;
@@ -135,31 +173,29 @@ div#moon {
 
 label {
   display: block;
+  font-weight: 300;
+  font-size: 0.9rem;
 }
 
 #form > * {
   flex: 0 0 50%; /* makes each input take up half of the width, making sure there's 2 input per row */
 }
 
-label {
-  font-weight: 300;
-  font-size: 0.9rem;
-}
+/* Invalid inputs */
 input {
   border-color: #E5E7EB;
-}
-
-input.error {
-  border: 1px solid red;
 }
 
 input:focus {
   border: 1px solid blue;
 }
 
-#email:invalid:not(:placeholder-shown) {
+input.error {
   border: 1px solid red;
 }
+/* ================================================================================================ */
+/*                        Styling last row                                                           */
+/* ================================================================================================ */
 
 #last-row {
   background-color: var(--color-base-bg);
@@ -177,32 +213,21 @@ button#create {
   border: 0;
   color: var(--color-base-text);
 }
-/* 6. Improve media defaults */
-img, picture, video, canvas, svg {
-  display: block;
-  max-width: 100%;
-}
 
-/* 7. Inherit fonts for form controls */
-input, button, textarea, select {
-  font: inherit;
-}
+/* ================================================================================================ */
+/*                        Styling night mode toggling moon                                                                */
+/* ================================================================================================ */
+div#moon button {
+  /* takes away all styling, leaves just the icon  */
+  all: unset; 
 
-/* 8. Avoid text overflows */
-p, h1, h2, h3, h4, h5, h6 {
-  overflow-wrap: break-word;
 }
-
-/* 9. Improve line wrapping */
-p {
-  text-wrap: pretty;
+div#moon {
+  position: absolute;
+  top: 5px;
+  right: 5px;
 }
-h1, h2, h3, h4, h5, h6 {
-  text-wrap: balance;
-}
-
-.amarante-regular {
-  font-family: "Amarante", serif;
-  font-weight: 400;
-  font-style: normal;
+#moon-pic {
+  width: 30px;
+  height: auto;
 }
