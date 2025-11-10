@@ -79,6 +79,7 @@ body {
 div#picture{
     flex: 2 1 0;
     position: relative;
+    overflow: hidden;
 }
 
 div#sign-up {
